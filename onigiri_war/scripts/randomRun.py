@@ -9,7 +9,6 @@ from geometry_msgs.msg import Twist
 #from cv_bridge import CvBridge, CvBridgeError
 #import cv2
 
-
 class RandomBot():
     def __init__(self, bot_name):
         # bot name 
@@ -39,6 +38,8 @@ class RandomBot():
         twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = th
         return twist
 
+
+
     def strategy(self):
         r = rospy.Rate(1) # change speed 1fps
 
@@ -58,5 +59,7 @@ class RandomBot():
 if __name__ == '__main__':
     rospy.init_node('random_rulo')
     bot = RandomBot('Random')
+
+
     bot.strategy()
 
