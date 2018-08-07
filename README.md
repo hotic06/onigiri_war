@@ -1,3 +1,6 @@
+個人参加、池内のロボットです。
+
+
 # onigiri_war
 OneNightROBOCON競技「onigiri war」プロジェクト
 

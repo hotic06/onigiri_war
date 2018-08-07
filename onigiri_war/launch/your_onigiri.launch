@@ -2,11 +2,33 @@
 <launch>
     <!-- You can change control program  -->
 
+      <!-- <node pkg="onigiri_war" type="runAlongTheWall.py" name="WallBotRun" output="screen"/>-->
+      <node name="twist_pid" pkg="pid" type="controller" ns="twist">
+        <param name="Kp" value="-0.015" />
+        <param name="Ki" value="0.0" />
+        <param name="Kd" value="0.0" />
+
+        <param name="upper_limit" value="1" />
+        <param name="lower_limit" value="-1" />
+
+      </node>
+
+      <node name="wall_pid" pkg="pid" type="controller" ns="wall">
+        <param name="Kp" value="0.1" />
+        <param name="Ki" value="0.0" />
+        <param name="Kd" value="0.0" />
+
+        <param name="upper_limit" value="0.5" />
+        <param name="lower_limit" value="-0.5" />        
+      </node>
 
 
+      <node pkg="onigiri_war" type="pubWallDistance.py" name="WallDistanceNode" output="screen" />
 
-    <!-- sample program  -->
-    <node pkg="onigiri_war" type="randomRun.py" name="randomRun" output="screen"/>
+      <node pkg="onigiri_war" type="runAlongTheWall.py" name="AlongWallNode" output="screen" />
+
+      <!-- End of your space  -->
+
 
 
 
