@@ -23,9 +23,32 @@
       </node>
 
 
+      <!--
       <node pkg="onigiri_war" type="pubWallDistance.py" name="WallDistanceNode" output="screen" />
 
       <node pkg="onigiri_war" type="runAlongTheWall.py" name="AlongWallNode" output="screen" />
+      -->
+
+
+      <node name="enemyhold" pkg="pid" type="controller" ns="enemyhold">
+        <param name="Kp" value="-0.025" />
+        <param name="Ki" value="0.0" />
+        <param name="Kd" value="0.0" />
+
+        <param name="upper_limit" value="0.5" />
+        <param name="lower_limit" value="-0.5" />
+
+      </node>
+
+      <!--
+      <node pkg="onigiri_war" type="enemyScan.py" name="enemyScan" output="screen" />
+      -->
+      <node pkg="onigiri_war" type="enemyHold.py" name="enemyHold" output="screen" />
+
+      <node pkg="onigiri_war" type="cameraNode.py" name="cameraNode" output="screen" />
+
+      <node pkg="onigiri_war" type="collisionNode.py" name="collisionNode" output="screen" />
+
 
       <!-- End of your space  -->
 
